@@ -1,0 +1,124 @@
+########## PRESENCE DETECTION AND ZONES ##########
+- alias: Everyone leaves home
+  description: Sluk alt, når vi forlader hjemmet
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: group.all_people
+    from: 'home'
+  action:
+    - service: light.turn_off
+      entity_id: group.all_lights
+    - service: media_player.turn_off
+      entity_id: group.all_media_players
+
+- alias: Nicolaj leaves UCN
+  description: Fortæl Anne, at Nicolaj er på vej hjem
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: person.nicolaj_jensen
+    from: 'UCN'
+  condition:
+    - condition: state 
+      entity_id: person.anne_ejsing
+      state: home
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.sovevaerelse
+        volume_level: 0.5
+    - service: tts.google_say
+      data:
+        entity_id: media_player.sovevaerelse
+        message: Hej Anne. Nicolaj er nu på vej hjem
+
+- alias: Anne leaves Uni
+  description: Fortæl Nicolaj, at Anne er på vej hjem
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: person.anne_ejsing
+    from: 'Uni'
+  condition:
+    - condition: state
+      entity_id: person.nicolaj_jensen
+      state: home
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.stue
+        volume_level: 0.5
+    - service: tts.google_say
+      entity_id: media_player.stue
+      data_template:
+        message: >
+          '{{[
+          "Hej Nicolaj. Anne er nu på vej hjem.", 
+          "Nicolaj. Skynd dig at rydde op og gem småkagerne væk. Anne er snart hjemme.", 
+          "Anne kalder Nicolaj. Jeg går fra uni nu.", 
+          "Kære Nicolaj. Din søde og gravide kæreste kommer snart hjem. Husk at være sød ved hende i dag.",
+          "Hey Nico, Google her. Lige en heads up, Anne er hjemme om fem. You know what to do.",
+          "Hej Nicolaj. Spænd hjelmen og stram sikkerhedselen. Din smækre lækre kæreste kommer snart hjem"
+          ] | random }}'
+
+
+########## MISC ##########
+- alias: Weekday Wakeup
+  description: Gradvist tænd lys og spil Nova når jeg skal op i hverdagen
+  trigger:
+    - platform: template # Trigger with my first alarm
+      value_template: >
+        {{ states('sensor.date_time') == (as_timestamp(states('sensor.pixel_4a_naeste_alarm')) - 5*60) | timestamp_custom("%Y-%m-%d, %H:%M") }}
+  condition:
+    - condition: template # Only trigger, if it hasn't already triggerede today
+      value_template: >
+        {{ now().day != state_attr('automation.weekday_wakeup', 'last_triggered').day}}
+    - condition: time # Trigger only on weekdays
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: sun # Trigger only if alarm is before sunrise
+      before: sunrise
+    - condition: state # Trigger only if I'm home
+      entity_id: person.anne_ejsing
+      state: home
+  action:
+    - service: light.turn_on # Gradually switch on lights. Transition = 20 min
+      data:
+        entity_id: light.sovevaerelse
+        color_temp: 225
+        brightness: 60
+        transition: 1200
+    - delay:
+        minutes: 20
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kokkenhub
+        volume_level: 0.1
+    - service: media_player.play_media # Play NOVA
+      data:
+        entity_id:  media_player.kokkenhub
+        media_content_id: 'http://live-bauerdk.sharp-stream.com/nova128.mp3'
+        media_content_type: 'music'
+
+########## BACKUP ##########
+- alias: Weekly Backup
+  trigger:
+    - platform: time
+      at: '20:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - sun
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: >
+          Backup_{{ now().strftime('%d-%m-%Y') }}
+
+
+

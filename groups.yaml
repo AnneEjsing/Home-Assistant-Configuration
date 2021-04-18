@@ -1,0 +1,22 @@
+
+all_lights:
+    name: all_lights
+    entities:
+      - light.kokkenlampe
+      - light.stuelampe
+      - light.sovevaerelseslampe
+
+all_people:
+    name: all_people
+    entities:
+      - person.anne_ejsing
+      - person.nicolaj_jensen
+
+all_media_players:
+    name: all_media_players
+    entities:
+      - media_player.sovevaerelse_tv
+      - media_player.stuen_tv
+      - media_player.kokkenhub
+      - media_player.sovevaerelse
+      - media_player.stue

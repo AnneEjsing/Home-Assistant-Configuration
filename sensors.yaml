@@ -1,0 +1,52 @@
+########## GITHUB INTEGRATION ##########
+- platform: github
+  access_token: !secret github_access_token
+  repositories:
+  - path: 'AnneEjsing/Home-Assistant-Configuration'
+
+########## TIME AND DATE ##########
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_utc"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+
+
+########## SYSTEM INFORMATION ##########
+#==============================
+#=== PI Information
+#==============================
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: memory_use
+    - type: memory_use_percent
+    - type: processor_use
+    - type: processor_temperature
+    - type: last_boot
+
+#==============================
+#=== System uptime
+#==============================
+- platform: uptime
+
+#==============================
+#=== Installed hass.io version
+#==============================
+- platform: version
+  name: Installed Version
+
+#================================
+#=== Latest Available HA Version
+#================================
+- platform: version
+  name: Latest Available Version
+  beta: false
+  image: raspberrypi3
+  source: hassio
