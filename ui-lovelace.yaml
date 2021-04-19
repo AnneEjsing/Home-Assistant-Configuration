@@ -14,4 +14,4 @@ title: Home
 sidebar: !include ui-elements/sidebar.yaml
 
 views:
-    !include ui-elements/weather-view.yaml
+    - !include ui-elements/weather-view.yaml

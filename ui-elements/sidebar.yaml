@@ -47,8 +47,8 @@
       icon:
       active: true
     - action: navigate
-      navigation_path: "/lovelace/lampen"
-      name: Kontrolér Rum
+      navigation_path: "/lovelace/floorplan"
+      name: Styr Hjem
       icon: mdi:floor-plan
     - action: navigate
       navigation_path: "/lovelace/music"
