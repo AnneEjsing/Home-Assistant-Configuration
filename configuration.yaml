@@ -51,3 +51,5 @@ lovelace:
       type: module
     - url: "/hacsfiles/stack-in-card/stack-in-card.js"
       type: module
+    - url: "/hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js"
+      type: module

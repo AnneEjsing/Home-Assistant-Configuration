@@ -6,6 +6,8 @@
 !www/
 !www/ui
 !www/ui/**
+!ui-elements/
+!ui-elements/**
 !*.yaml
 !*.md
 
