@@ -4,85 +4,54 @@ icon: mdi:white-balance-sunny
 panel: true
 badges: []
 cards:
-  - elements:
-      - current: true
-        details: true
-        entity: weather.home
-        forecast: true
-        name: Vejret
-        style: |
-          :host {
-            left: 50%;
-            top:  40%;
-            width: 90%;
-            overflow: hidden;
-            height: 63%;
-            background: none !important;
-            box-shadow: none !important;
-          }
-          .current {
-            margin-bottom: 7vw;
-          }
-          .variations {
-            margin-bottom: 4vw;
-          }
-          ha-card {
-            height: 100%;
-            background: none  !important;
-            box-shadow: none !important;
-            border-radius: 1vw;
-            font-size: 1.2vw !important;
-            color: rgba(255, 255, 255, 0.7);
-          }
-          .forecast{
-            padding: 0 2.5%;
-            width: 95%;
-          }
-          .forecast .day:first-child{
-            border-left: 0.1em solid #d9d9d9;
-          }
-          .forecast .day:last-child{
-            border-right: 0.1em solid #d9d9d9;
-          }
-        type: custom:weather-card
-      - fillColor: rgba(89, 160, 238, 0.2)
-        lat: 53.361455
-        lineColor: rgba(89, 160, 238, 1)
-        update_interval: 20
-        long: 6.866892
-        style: |
-          :host {
-            left: 50%;
-            top:  85%;
-            width: 90%;
-            overflow: hidden;
-            height: 20%;
-            background: none !important;
-            box-shadow: none !important;
-          }
-          ha-card {
-            height: 100%;
-            background: none  !important;
-            box-shadow: none !important;
-            border-radius: 1vw;
-            position: relative;
-            font-size: 1vw !important;
-            color: rgba(255, 255, 255, 0.7);
-          }
-          .chart-container {
-              height:100%;
-              width:100%
-          }
-          #container {
-              height:100%;
-              width:100%;
-              padding: 0 !important;
-              margin: 0 !important;
-          }
-        type: custom:buien-rain-forecast
-    image: "/local/ui/floorplan/blurredFloorplan.png"
+  - type: picture-elements
+    image: /local/ui/floorplan/floorplan.png
     style: |
-      ha-card {
-        background: rgba(42, 46, 48, 1)
+      ha-card: {
+        background: rgba(42, 46, 48, 1);
       }
-    type: picture-elements
+    elements:
+    ######################## LIGHTS ########################
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 23%
+          - left: 28%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 50%
+          - left: 28%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 80%
+          - left: 28%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 23%
+          - left: 50%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 50%
+          - left: 50%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 23%
+          - left: 69%
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stuelampe
+          - top: 80%
+          - left: 69%
+    ######################## MISC ########################

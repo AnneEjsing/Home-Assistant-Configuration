@@ -1,0 +1,15 @@
+floorplan-light-template:
+  element: 
+    type: image
+    entity: '[[entity]]'
+    tap_action:
+      action: toggle
+    image: /local/ui/floorplan/icons/044-wedge.png
+    style:
+      height: 3vw
+      width: 3vw
+      top: '[[top]]'
+      left: '[[left]]'
+
+
+

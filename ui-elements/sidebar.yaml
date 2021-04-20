@@ -44,7 +44,7 @@
     - action: navigate
       navigation_path: "/lovelace/home"
       name: Hjem
-      icon:
+      icon: mdi:home
       active: true
     - action: navigate
       navigation_path: "/lovelace/floorplan"
@@ -52,7 +52,7 @@
       icon: mdi:floor-plan
     - action: navigate
       navigation_path: "/lovelace/music"
-      name: Støvsuger
+      name: TEST2
       icon: mdi:robot-vacuum
     - action: navigate
       navigation_path: "/lovelace/4"
