@@ -83,7 +83,8 @@ cards:
       - type: custom:decluttering-card
         template: floorplan-tv-template
         variables:
-          - entity: media_player.sovevaerelse_cc
+          - entity: media_player.philips_tv
+          - cc: media_player.stuen_cc 
           - top: 32%
           - left: 68.5%
       - type: image
