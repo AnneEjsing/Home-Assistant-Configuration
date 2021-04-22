@@ -1,3 +1,41 @@
+floorplan-googlehome-template:
+  element:
+    type: image
+    entity: "[[entity]]"
+    tap_action:
+      action: toggle
+    hold_action:
+      action: call-service
+      service: browser_mod.popup
+      service_data:
+        title: " "
+        card:
+          type: custom:mini-media-player
+          entity: "[[entity]]"
+          artwork: cover
+          source: icon
+          speaker_group:
+            show_group_count: true
+            entities:
+              - entity_id: media_player.kokkenhub
+                name: "Køkken: Google Hub"
+              - entity_id: media_player.sovevaerelse_gh
+                name: "Soveværelse: Google Home"
+              - entity_id: media_player.stue_gh
+                name: "Stuen: Google Home"
+          deviceID:
+            - this
+    image: /local/ui/floorplan/icons/google-home.png
+    state_filter:
+      "off": opacity(60%) grayscale(100%)
+      "on": opacity(90%) invert(0%)
+    style:
+      height: "[[size]]"
+      width: "[[size]]"
+      top: "[[top]]"
+      left: "[[left]]"
+
+
 floorplan-light-template:
   element: 
     type: image

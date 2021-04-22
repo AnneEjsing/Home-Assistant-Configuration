@@ -78,6 +78,16 @@ cards:
           - left: 74%
           - size: 2vw
 
+      #########################    GOOGLE HOME     #########################
+      
+      - type: custom:decluttering-card
+        template: floorplan-googlehome-template
+        variables:
+          - entity: media_player.kokkenhub
+          - top: 77%
+          - left: 52%
+          - size: 2vw
+
       #########################      SWITCHES      #########################
   
       - type: image
