@@ -77,3 +77,32 @@ cards:
           - top: 14%
           - left: 74%
           - size: 2vw
+
+      #########################      SWITCHES      #########################
+  
+      - type: image
+        entity: switch.tapo1
+        image: /local/ui/floorplan/icons/019-plug.png
+        tap_action:
+          action: toggle
+        state_filter:
+          "off": opacity(60%) grayscale(100%)
+          "on": opacity(90%) invert(0%)
+        style:
+          height: 2vw
+          width: 2vw
+          top: 14%
+          left: 66.25%
+      - type: image
+        entity: switch.tapo1
+        image: /local/ui/floorplan/icons/019-plug.png
+        tap_action:
+          action: toggle
+        state_filter:
+          "off": opacity(60%) grayscale(100%)
+          "on": opacity(90%) invert(0%)
+        style:
+          height: 2vw
+          width: 2vw
+          top: 14%
+          left: 70.5%

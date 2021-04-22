@@ -16,6 +16,18 @@ sensor: !include sensors.yaml
 logger:
   default: error
 
+browser_mod:
+  prefix: "browser_"
+  devices:
+    4b65d763_6ba3680d:
+        name: Anne-MacBook
+
+switch:
+    platform: tapo_p100_control
+    ip_address: 192.168.1.147
+    email: !secret tapo_email
+    password: !secret tapo_pass
+
 lovelace:
   mode: yaml
   resources:
@@ -52,4 +64,10 @@ lovelace:
     - url: "/hacsfiles/stack-in-card/stack-in-card.js"
       type: module
     - url: "/hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js"
+      type: module
+    - url: "/browser_mod.js"
+      type: module
+    - url: "/hacsfiles/light-popup-card/light-popup-card.js"
+      type: module
+    - url: "/hacsfiles/tv-card/tv-card.js?v=1"
       type: module
