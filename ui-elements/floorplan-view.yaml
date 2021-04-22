@@ -78,6 +78,28 @@ cards:
           - left: 74%
           - size: 2vw
 
+      #########################         TV         #########################
+      
+      - type: custom:decluttering-card
+        template: floorplan-tv-template
+        variables:
+          - entity: media_player.sovevaerelse_cc
+          - top: 32%
+          - left: 68.5%
+      - type: image
+        entity: light.stue
+        tap_action:
+          action: toggle
+        image: /local/ui/floorplan/icons/050-smart-tv.png
+        state_filter:
+          "off": opacity(50%) grayscale(100%)
+          "on": opacity(90%) invert(0%)
+        style:
+          height: 3vw
+          width: 3vw
+          top: 95%
+          left: 72%
+
       #########################    GOOGLE HOME     #########################
       
       - type: custom:decluttering-card

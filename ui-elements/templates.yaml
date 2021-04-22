@@ -92,11 +92,464 @@ floorplan-light-template:
       width: "[[size]]"
       top: "[[top]]"
       left: "[[left]]"
+
+floorplan-tv-template:
+  element:
+    type: image
+    entity: "[[entity]]"
+    tap_action:
+      action: toggle
+    hold_action:
+      action: call-service
+      service: browser_mod.popup
+      service_data:
+        title: " "
+        card:
+          type: vertical-stack
+          style: | 
+            elemrnt.style {
+              padding: 3vw !important;
+            }
+          cards:
+            - type: custom:mini-media-player
+              entity: "[[entity]]"
+              artwork: cover
+              source: icon
+            - type: custom:mod-card
+              card_mod:
+                style: |
+                  ha-card {
+                    margin: 0.75vw 3vw;
+                    border-radius:4px;
+                    box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px, rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+                  }
+              card:
+                type: grid
+                columns: 5
+                  
+                cards:
+                  ##### ROW  #####
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:power
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                ##### ROW 1 #####
+                  - type: button
+                    icon: mdi:television
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:arrow-up
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:menu
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  ##### ROW 2 #####
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:arrow-left
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:arrow-right
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  ##### ROW 3 #####
+                  - type: button
+                    icon: mdi:undo
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:arrow-down
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:home
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+            - type: custom:mod-card
+              card_mod:
+                style: |
+                  ha-card {
+                    margin: 0.75vw 3vw;
+                    border-radius:4px;
+                    box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px, rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+                  }
+              card:
+                type: grid
+                columns: 5
+                cards:
+                ##### ROW 1 #####
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:numeric-1-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-2-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-3-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  ##### ROW 2 #####
+                  - type: button
+                    icon: mdi:volume-plus
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-4-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-5-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-6-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:arrow-up
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  ##### ROW 3 #####
+                  - type: button
+                    icon: mdi:volume-minus
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-7-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-8-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home  
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:numeric-9-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: button
+                    icon: mdi:arrow-down
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  ##### ROW 4 #####
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: button
+                    icon: mdi:numeric-0-circle-outline
+                    tap-action: 
+                      action: call-service
+                      service: remote.send_command
+                      service_data:
+                        entity_id: remote.philips_tv
+                        device: 48pfs8209_12
+                        command: Home
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none !important;
+                          box-shadow: none !important;
+                        }
+                  - type: "custom:button-card"
+                    color_type: blank-card
+                  - type: "custom:button-card"
+                    color_type: blank-card
+          deviceID:
+            - this
+    image: /local/ui/floorplan/icons/050-smart-tv.png
+    state_filter:
+      "off": opacity(60%) grayscale(100%)
+      "unavailable": opacity(60%) grayscale(100%)
+      "on": opacity(90%) invert(0%)
     style:
       height: 3vw
       width: 3vw
-      top: '[[top]]'
-      left: '[[left]]'
-
-
+      top: "[[top]]"
+      left: "[[left]]"
 
