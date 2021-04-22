@@ -11,47 +11,69 @@ cards:
         background: rgba(42, 46, 48, 1);
       }
     elements:
-    ######################## LIGHTS ########################
+
+      #########################       LIGHTS       #########################
+
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.stue
           - top: 23%
-          - left: 28%
+          - left: 26%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.stue
           - top: 50%
-          - left: 28%
+          - left: 26%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.stue
           - top: 80%
-          - left: 28%
+          - left: 26%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.stue
           - top: 23%
-          - left: 50%
+          - left: 46%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.kokken
           - top: 50%
           - left: 50%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.sovevaerelse
           - top: 23%
-          - left: 69%
+          - left: 66.25%
+          - size: 3vw
       - type: custom:decluttering-card
         template: floorplan-light-template
         variables:
-          - entity: light.stuelampe
+          - entity: light.stue
           - top: 80%
-          - left: 69%
-    ######################## MISC ########################
+          - left: 72%
+          - size: 3vw
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stue
+          - top: 14%
+          - left: 62.5%
+          - size: 2vw
+      - type: custom:decluttering-card
+        template: floorplan-light-template
+        variables:
+          - entity: light.stue
+          - top: 14%
+          - left: 74%
+          - size: 2vw
