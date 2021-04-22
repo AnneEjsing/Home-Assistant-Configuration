@@ -106,3 +106,90 @@ cards:
           width: 2vw
           top: 14%
           left: 70.5%
+
+      #########################        MISC        #########################
+ 
+      - type: image
+        entity: light.stue
+        tap_action:
+          action: toggle
+        image: /local/ui/floorplan/icons/005-coffee-machine.png
+        state_filter:
+          "off": opacity(50%) grayscale(100%)
+          "on": opacity(90%) invert(0%)
+        style:
+          height: 3vw
+          width: 3vw
+          top: 95%
+          left: 42%
+      - type: image
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: " "
+            card:
+              type: vertical-stack
+              title: Netatmo Indeklima
+              cards:
+                - type: entities
+                  entities:
+                  - entity: sensor.netatmo_sovevaerelse_health
+                    name: Sundhed
+                  - entity: sensor.netatmo_sovevaerelse_co2
+                    name: CO2
+                  - entity: sensor.netatmo_sovevaerelse_humidity
+                    name: Luftfugtighed
+                  - entity: sensor.netatmo_sovevaerelse_noise
+                    name: Støjniveau
+                  - entity: sensor.netatmo_sovevaerelse_pressure
+                    name: Lufttryk
+                  - entity: sensor.netatmo_sovevaerelse_temperature
+                    name: Temperatur
+                - type: custom:mini-graph-card
+                  name: Udvikling i temperatur
+                  hours_to_show: 168
+                  font_size: 75
+                  height: 100
+                  entities:
+                    - sensor.netatmo_sovevaerelse_temperature
+                  color_thresholds:
+                    - value: 18
+                      color: "#00c0ff"
+                    - value: 20
+                      color: "#77ff00"
+                    - value: 22
+                      color: "#ffc600"
+                    - value: 30
+                      color: "#ff0000"
+                  show:
+                    fill: fade
+                - type: custom:mini-graph-card
+                  name: Udvikling i CO2
+                  hours_to_show: 168
+                  font_size: 75
+                  height: 100
+                  entities:
+                    - sensor.netatmo_sovevaerelse_co2
+                  color_thresholds:
+                    - value: 400
+                      color: "#00c0ff"
+                    - value: 1000
+                      color: "#77ff00"
+                    - value: 2000
+                      color: "#ffc600"
+                    - value: 5000
+                      color: "#ff0000"
+                  show:
+                    fill: fade
+              deviceID:
+                - this
+        image: /local/ui/floorplan/icons/005-coffee-machine.png
+        state_filter:
+          "off": opacity(50%) grayscale(100%)
+          "on": opacity(90%) invert(0%)
+        style:
+          height: 2vw
+          width: 2vw
+          top: 77%
+          left: 45%
