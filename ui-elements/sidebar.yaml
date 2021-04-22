@@ -59,9 +59,9 @@
       name: Medier
       icon: mdi:play-circle
     - action: toggle
-      entity: light.stuelampe
+      entity: light.stue
       name: Lichtstrip
-      state: light.stuelampe
+      state: light.stue
       icon: mdi:led-strip-variant
   bottomCard:
     type: vertical-stack
