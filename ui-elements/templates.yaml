@@ -1,10 +1,59 @@
 floorplan-light-template:
   element: 
     type: image
-    entity: '[[entity]]'
+    entity: "[[entity]]"
     tap_action:
       action: toggle
+    hold_action:
+      action: call-service
+      service: browser_mod.popup
+      service_data:
+        title: " "
+        card:
+          type: custom:light-popup-card
+          entity: "[[entity]]"
+          brightnessHeight: 15vw
+          brightnessWidth: 5vw
+          scenesInARow: 3
+          switchHeight: 300px
+          switchWidth: 110px
+          actions:
+            - service: scene.turn_on
+              service_data:
+                entity_id: scene.concentreren
+              color: "#BBEEF3"
+              name: Kold
+            - service: scene.turn_on
+              service_data:
+                entity_id: scene.helder
+              color: "#FFE7C0"
+              name: Neutral
+            - service: scene.turn_on
+              service_data:
+                entity_id: scene.ontspannen
+              color: "#FDCA64"
+              name: Varm
+          deviceID:
+            - this
+        style:
+          .: |
+            :host {
+              --mdc-dialog-min-height: 60%;
+              --mdc-dialog-min-width: 100%;
+              --mdc-dialog-max-width: 100%;
+            }
+            mwc-icon-button {
+              color: #FFF;
+            }
     image: /local/ui/floorplan/icons/044-wedge.png
+    state_filter:
+      "off": opacity(60%) grayscale(100%)
+      "on": opacity(90%) invert(0%)
+    style:
+      height: "[[size]]"
+      width: "[[size]]"
+      top: "[[top]]"
+      left: "[[left]]"
     style:
       height: 3vw
       width: 3vw
