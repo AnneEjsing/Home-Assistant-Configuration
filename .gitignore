@@ -8,6 +8,8 @@
 !www/ui/**
 !ui-elements/
 !ui-elements/**
+!themes/
+!themes/**
 !*.yaml
 !*.md
 

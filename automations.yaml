@@ -1,3 +1,14 @@
+- alias: Set Theme on HA Start
+  description: ''
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: slategrey
+    service: frontend.set_theme
+
 ########## PRESENCE DETECTION AND ZONES ##########
 - alias: Everyone leaves home
   description: Sluk alt, når vi forlader hjemmet
