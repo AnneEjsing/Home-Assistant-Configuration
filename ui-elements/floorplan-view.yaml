@@ -110,6 +110,20 @@ cards:
           - top: 77%
           - left: 52%
           - size: 2vw
+      - type: custom:decluttering-card
+        template: floorplan-googlehome-template
+        variables:
+          - entity: media_player.sovevaerelse_gh
+          - top: 30%
+          - left: 56.5%
+          - size: 2vw
+      - type: custom:decluttering-card
+        template: floorplan-googlehome-template
+        variables:
+          - entity: media_player.stue_gh
+          - top: 67.5%
+          - left: 34.5%
+          - size: 2vw
 
       #########################      SWITCHES      #########################
   
