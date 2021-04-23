@@ -27,7 +27,7 @@ floorplan-googlehome-template:
             - this
     image: /local/ui/floorplan/icons/google-home.png
     state_filter:
-      "off": opacity(60%) grayscale(100%)
+      "off": opacity(70%) grayscale(100%)
       "on": opacity(90%) invert(0%)
     style:
       height: "[[size]]"
@@ -85,7 +85,7 @@ floorplan-light-template:
             }
     image: /local/ui/floorplan/icons/044-wedge.png
     state_filter:
-      "off": opacity(60%) grayscale(100%)
+      "off": opacity(70%) grayscale(100%)
       "on": opacity(90%) invert(0%)
     style:
       height: "[[size]]"
@@ -544,8 +544,8 @@ floorplan-tv-template:
             - this
     image: /local/ui/floorplan/icons/050-smart-tv.png
     state_filter:
-      "off": opacity(60%) grayscale(100%)
-      "unavailable": opacity(60%) grayscale(100%)
+      "off": opacity(70%) grayscale(100%)
+      "unavailable": opacity(70%) grayscale(100%)
       "on": opacity(90%) invert(0%)
     style:
       height: 3vw
