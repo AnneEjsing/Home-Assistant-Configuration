@@ -56,19 +56,22 @@ floorplan-light-template:
           switchHeight: 300px
           switchWidth: 110px
           actions:
-            - service: scene.turn_on
+            - service: light.turn_on
               service_data:
-                entity_id: scene.concentreren
+                entity_id: "[[entity]]"
+                color_temp: 150
               color: "#BBEEF3"
               name: Kold
-            - service: scene.turn_on
+            - service: light.turn_on
               service_data:
-                entity_id: scene.helder
+                entity_id: "[[entity]]"
+                color_temp: 325
               color: "#FFE7C0"
               name: Neutral
-            - service: scene.turn_on
+            - service: light.turn_on
               service_data:
-                entity_id: scene.ontspannen
+                entity_id: "[[entity]]"
+                color_temp: 500
               color: "#FDCA64"
               name: Varm
           deviceID:
