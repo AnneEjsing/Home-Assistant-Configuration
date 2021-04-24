@@ -52,13 +52,13 @@
       name: Styr Hjem
       icon: mdi:floor-plan
     - action: navigate
-      navigation_path: "/lovelace/music"
-      name: TEST2
+      navigation_path: "/lovelace/vacuum"
+      name: Støvsuger
       icon: mdi:robot-vacuum
     - action: navigate
-      navigation_path: "/lovelace/4"
-      name: Medier
-      icon: mdi:play-circle
+      navigation_path: "/lovelace/info"
+      name: Information
+      icon: mdi:information
     - action: toggle
       entity: light.stue
       name: Lichtstrip
