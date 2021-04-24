@@ -30,6 +30,14 @@
     - type: processor_use
     - type: processor_temperature
     - type: last_boot
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+    - type: ipv4_address
+      arg: eth0
+    - type: ipv4_address
+      arg: eth0
 
 #==============================
 #=== System uptime
@@ -43,10 +51,15 @@
   name: Installed Version
 
 #================================
-#=== Latest Available HA Version
+#=== HOME ASSISTANT
 #================================
 - platform: version
   name: Latest Available Version
   beta: false
   image: raspberrypi3
   source: hassio
+
+- platform: filesize
+  file_paths:
+    - /config/home-assistant_v2.db
+    - /config/home-assistant.log
