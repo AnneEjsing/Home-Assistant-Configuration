@@ -131,24 +131,23 @@ cards:
           - type: entities
             title: Raspberry Pi
             show_header_toggle: false
-            card_mod:
-              style: |
-                mini-graph-card {
-                  margin: -22.7px -18px -6px -7px;
-                }
-                .footer {
-                  overflow: visible !important;
-                }
-                ha-card {
-                  border-radius:10px;
-                  box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px, rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
-                }
-                 .card-header {
-                  background: #FFFFFF10;
-                  font-size: 1.5vw;
-                  font-weight: 400;
-                  margin: 0 0 1vw 0;
-                }
+            style: |
+              mini-graph-card {
+                margin: -22.7px -18px -6px -7px;
+              }
+              .footer {
+                overflow: visible !important;
+              }
+              ha-card {
+                border-radius:10px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px, rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+              }
+                .card-header {
+                background: #FFFFFF10;
+                font-size: 1.5vw;
+                font-weight: 400;
+                margin: 0 0 1vw 0;
+              }
             entities:
               - entity: sensor.processor_temperature
                 name: CPU Temp
@@ -184,42 +183,55 @@ cards:
                       service: homeassistant.update_entity
                       service_data:
                         entity_id: sensor.disk_use_percent_home
+              - type: divider
+              - entity: switch.adguard_filtering
+                name: AdGuard
               - type: custom:hui-element
                 card_type: horizontal-stack
                 cards:
                   - type: entities
-                    card_mod:
-                      class: information_network
+                    style: |
+                      ha-card {
+                        box-shadow: none !important;
+                        background: none !important;
+                        margin-top: -1vw
+                      }
                     entities:
-                      - entity: sensor.network_out_eth0
-                        card_mod:
-                          style: >
-                            :host {
-                              --paper-item-icon-color: green;
-                            }
+                      - entity: sensor.adguard_dns_queries
+                        name: " "
+                        style: |
+                          :host {
+                            --paper-item-icon-color: green;
+                          }
+                          .text-content {
+                            margin-left: -5vw
+                          }
                   - type: entities
-                    card_mod:
-                      class: information_network
+                    style: |
+                      ha-card {
+                        box-shadow: none !important;
+                        background: none !important;
+                        margin-top: -1vw
+                      }
                     entities:
-                      - entity: sensor.network_in_eth0
-                        card_mod:
-                          style: >
-                            :host {
-                              --paper-item-icon-color: #385581;
-                            }
+                      - entity: sensor.adguard_average_processing_speed
+                        name: " "
+                        style: |
+                          :host {
+                            --paper-item-icon-color: #385581;
+                          }
+                          .text-content {
+                            margin-left: -5vw
+                          }
             footer:
               type: custom:mini-graph-card
               entities:
                 - color: '#385581'
-                  entity: sensor.network_in_eth0
-                - color: green
-                  entity: sensor.network_out_eth0
+                  entity: sensor.adguard_dns_queries_blocked_ratio
               align_state: left
               group: false
-              points_per_hour: 15
               line_width: 3
               hour24: true
-              hours_to_show: 1.5
               show:
                 {fill: fade, icon: false, name: false, state: false, 
                 name_adaptive_color: true, labels: hover, legend: false}
