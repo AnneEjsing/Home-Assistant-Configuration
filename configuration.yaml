@@ -1,5 +1,11 @@
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+homeassistant:
+  name: Hjem
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: metric
+  time_zone: Europe/Copenhagen
+  allowlist_external_dirs: [/config/]
 
 # Text to speech
 tts:
@@ -18,6 +24,10 @@ logger:
 
 frontend:
     themes: !include_dir_merge_named 'themes'
+
+system_health:
+recorder:
+  purge_keep_days: 2
 
 browser_mod:
   prefix: "browser_"
@@ -73,4 +83,10 @@ lovelace:
     - url: "/hacsfiles/light-popup-card/light-popup-card.js"
       type: module
     - url: "/hacsfiles/tv-card/tv-card.js?v=1"
+      type: module
+    - url: /hacsfiles/bar-card/bar-card.js
+      type: module
+    - url: /hacsfiles/lovelace-hui-element/hui-element.js
+      type: module
+    - url: /hacsfiles/lovelace-gap-card/gap-card.js
       type: module
