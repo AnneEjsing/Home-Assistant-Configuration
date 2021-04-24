@@ -5,7 +5,7 @@ slategrey:
   dark-primary-color: '#bdbdbd'
   light-primary-color: '#bdbdbd'
   # Text colors
-  primary-text-color: '#e1e1e1'
+  primary-text-color: '#bdbdbd'
   text-primary-color: 'var(--primary-text-color)'
   secondary-text-color: '#9b9b9b'
   disabled-text-color: '#6f6f6f'
@@ -21,7 +21,7 @@ slategrey:
   # Nav Menu
   paper-listbox-color: '#777777'
   paper-listbox-background-color: '#141414'
-  paper-grey-50: #222222
+  paper-grey-50: 'rgba(34, 34, 34, .8)'
   paper-grey-200: '#222222'
   # Paper card
   paper-card-header-color: '#2980b9'
