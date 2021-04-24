@@ -4,8 +4,15 @@ icon: mdi:white-balance-sunny
 panel: true
 badges: []
 cards:
-  - elements:
-      - current: true
+  - type: picture-elements
+    image: "/local/ui/floorplan/blurredFloorplan.png"
+    style: |
+      ha-card {
+        background: rgba(42, 46, 48, 1)
+      }
+    elements:
+      - type: custom:weather-card
+        current: true
         details: true
         entity: weather.home
         forecast: true
@@ -44,8 +51,8 @@ cards:
           .forecast .day:last-child{
             border-right: 0.1em solid #d9d9d9;
           }
-        type: custom:weather-card
-      - fillColor: rgba(89, 160, 238, 0.2)
+      - type: custom:buien-rain-forecast
+        fillColor: rgba(89, 160, 238, 0.2)
         lat: 53.361455
         lineColor: rgba(89, 160, 238, 1)
         update_interval: 20
@@ -79,10 +86,3 @@ cards:
               padding: 0 !important;
               margin: 0 !important;
           }
-        type: custom:buien-rain-forecast
-    image: "/local/ui/floorplan/blurredFloorplan.png"
-    style: |
-      ha-card {
-        background: rgba(42, 46, 48, 1)
-      }
-    type: picture-elements
