@@ -7,7 +7,7 @@ kiosk_mode:
       hide_sidebar: false
       hide_header: false
     - users:
-        - "tablet"
+        - "tablet"  
       hide_sidebar: true
       hide_header: true 
 title: Home
@@ -15,5 +15,6 @@ title: Home
 sidebar: !include ui-elements/sidebar.yaml
 
 views:
-    - !include ui-elements/weather-view.yaml 
+    - !include ui-elements/weather-view.yaml     
     - !include ui-elements/floorplan-view.yaml
+    - !include ui-elements/info-view.yaml
