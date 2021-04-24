@@ -109,10 +109,6 @@ floorplan-tv-template:
         title: " "
         card:
           type: vertical-stack
-          style: | 
-            elemrnt.style {
-              padding: 3vw !important;
-            }
           cards:
             - type: custom:mini-media-player
               entity: "[[cc]]"
