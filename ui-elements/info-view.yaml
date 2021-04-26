@@ -205,6 +205,7 @@ cards:
                     entities:
                       - entity: sensor.speedtest_upload
                         name: " "
+                        icon: mdi:arrow-up
                         style: |
                           :host {
                             --paper-item-icon-color: green;
@@ -222,6 +223,7 @@ cards:
                     entities:
                       - entity: sensor.speedtest_download
                         name: " "
+                        icon: mdi:arrow-down
                         style: |
                           :host {
                             --paper-item-icon-color: #385581;
