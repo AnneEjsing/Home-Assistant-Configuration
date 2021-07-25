@@ -51,38 +51,3 @@ cards:
           .forecast .day:last-child{
             border-right: 0.1em solid #d9d9d9;
           }
-      - type: custom:buien-rain-forecast
-        fillColor: rgba(89, 160, 238, 0.2)
-        lat: 53.361455
-        lineColor: rgba(89, 160, 238, 1)
-        update_interval: 20
-        long: 6.866892
-        style: |
-          :host {
-            left: 50%;
-            top:  85%;
-            width: 90%;
-            overflow: hidden;
-            height: 20%;
-            background: none !important;
-            box-shadow: none !important;
-          }
-          ha-card {
-            height: 100%;
-            background: none  !important;
-            box-shadow: none !important;
-            border-radius: 1vw;
-            position: relative;
-            font-size: 1vw !important;
-            color: rgba(255, 255, 255, 0.7);
-          }
-          .chart-container {
-              height:100%;
-              width:100%
-          }
-          #container {
-              height:100%;
-              width:100%;
-              padding: 0 !important;
-              margin: 0 !important;
-          }

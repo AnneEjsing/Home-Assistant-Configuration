@@ -184,8 +184,14 @@ cards:
                       service_data:
                         entity_id: sensor.disk_use_percent_home
               - type: divider
-              - entity: switch.adguard_filtering
-                name: AdGuard
+              - type: custom:multiple-entity-row
+                entity: sensor.speedtest_ping
+                name: Tryk for ny speedtest
+                state_header: Ping
+                toggle: false
+                tap_action:
+                  action: call-service
+                  service: speedtestdotnet.speedtest
               - type: custom:hui-element
                 card_type: horizontal-stack
                 cards:
@@ -197,8 +203,9 @@ cards:
                         margin-top: -1vw
                       }
                     entities:
-                      - entity: sensor.adguard_dns_queries
+                      - entity: sensor.speedtest_upload
                         name: " "
+                        icon: mdi:arrow-up
                         style: |
                           :host {
                             --paper-item-icon-color: green;
@@ -214,8 +221,9 @@ cards:
                         margin-top: -1vw
                       }
                     entities:
-                      - entity: sensor.adguard_average_processing_speed
+                      - entity: sensor.speedtest_download
                         name: " "
+                        icon: mdi:arrow-down
                         style: |
                           :host {
                             --paper-item-icon-color: #385581;
@@ -227,16 +235,20 @@ cards:
               type: custom:mini-graph-card
               entities:
                 - color: '#385581'
-                  entity: sensor.adguard_dns_queries_blocked_ratio
+                  entity: sensor.speedtest_upload
+                - color: green
+                  entity: sensor.speedtest_download
               align_state: left
               group: false
               line_width: 3
               hour24: true
+              hours_to_show: 24
               show:
                 {fill: fade, icon: false, name: false, state: false, 
                 name_adaptive_color: true, labels: hover, legend: false}
               tap_action:
-                action: none
+                action: call-service
+                service: speedtestdotnet.speedtest
 
           ############################## BATTERY STATUS ##############################  
           - type: entities

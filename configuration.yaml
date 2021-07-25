@@ -25,6 +25,7 @@ logger:
 frontend:
     themes: !include_dir_merge_named 'themes'
 
+sun:
 history:
 system_health:
 recorder:
@@ -82,8 +83,6 @@ lovelace:
     - url: "/browser_mod.js"
       type: module
     - url: "/hacsfiles/light-popup-card/light-popup-card.js"
-      type: module
-    - url: "/hacsfiles/tv-card/tv-card.js?v=1"
       type: module
     - url: /hacsfiles/bar-card/bar-card.js
       type: module
